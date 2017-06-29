@@ -9,7 +9,7 @@ En esta Kata, tu trabajo es desarrollar un nuevo servicio que use el "Single Sig
 
 El "Single Sign On Registry" está desarrollado por otro equipo por lo que no podemos acceder a él. Pero tenemos la interfaz para el "Single Sign On Registry" para que podamos avanzar con nuestro servicio.
 
-## Test Doubles
+## Dobles de tests
 
 Esta kata es útil para prácticar la utilizacin de diferentes tipos de dobles de tests.
 
