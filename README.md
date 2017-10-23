@@ -15,4 +15,4 @@ Esta kata es útil para prácticar la utilizacin de diferentes tipos de dobles d
 
 ## Credits
 
-Esta es únicamente la versin php de la kata original. La kata original está publicada en [emilybache github](https://github.com/emilybache/Single-Sign-On-Kata)
+Esta es únicamente la versión php de la kata original. La kata original está publicada en [emilybache github](https://github.com/emilybache/Single-Sign-On-Kata)
