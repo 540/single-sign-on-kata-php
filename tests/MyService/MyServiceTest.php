@@ -9,7 +9,9 @@ class MyServiceTest extends \PHPUnit_Framework_TestCase
     public function testInvalidSSOTokenIsRejected()
     {
         $myService = new MyService(null);
-        $response = $myService->handleRequest(new Request("Papirruqui", null));
-        $this->assertNotEquals("hello Papirruqui!", $response->getText());
+
+        $response = $myService->handleRequest(new Request("Foo", null));
+        
+        $this->assertNotEquals("hello Foo!", $response->getText());
     }
 }
