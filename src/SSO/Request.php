@@ -18,7 +18,7 @@ class Request
      * @param string   $name
      * @param SSOToken $token
      */
-    public function __construct($name, SSOToken $token)
+    public function __construct($name, ?SSOToken $token)
     {
         $this->name = $name;
         $this->token = $token;

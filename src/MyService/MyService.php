@@ -16,7 +16,7 @@ class MyService
     /**
      * @param SingleSignOnRegistry $registry
      */
-    public function __construct(SingleSignOnRegistry $registry)
+    public function __construct(?SingleSignOnRegistry $registry)
     {
         $this->registry = $registry;
     }
@@ -29,5 +29,24 @@ class MyService
     public function handleRequest(Request $request)
     {
         return new Response("hello ".$request->getName()."!");
+    }
+	
+    /**
+     * @param string $username
+     * @param string $password
+     *
+     * @return SSOToken
+     */
+    public function handleRegister($username, $password)
+    {
+        return;
+    }
+	
+    /**
+     * @param SSOToken
+     */
+    public function handleUnRegister(SSOToken $token)
+    {
+        return;
     }
 }
