@@ -10,7 +10,8 @@
     "autoload": {
         "psr-4" : {
             "MyService\\": ["src/MyService", "tests/MyService"],
-            "SSO\\": "src/SSO"
+            "SSO\\": "src/SSO",
+            "Doubles\\": "tests/Doubles"
         }
     },
     "scripts": {

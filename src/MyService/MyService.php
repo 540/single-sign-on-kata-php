@@ -5,48 +5,37 @@ namespace MyService;
 use SSO\Request;
 use SSO\Response;
 use SSO\SingleSignOnRegistry;
+use SSO\SSOToken;
 
 class MyService
 {
-    /**
-     * @var SingleSignOnRegistry
-     */
-    private $registry;
+    private SingleSignOnRegistry $registry;
 
-    /**
-     * @param SingleSignOnRegistry $registry
-     */
-    public function __construct(?SingleSignOnRegistry $registry)
+    public function __construct(SingleSignOnRegistry $registry)
     {
         $this->registry = $registry;
     }
 
-    /**
-     * @param Request $request
-     *
-     * @return Response
-     */
-    public function handleRequest(Request $request)
+    public function handleRequest(Request $request): Response
     {
-        return new Response("hello ".$request->getName()."!");
+        if($this->registry->isValid($request->getSSOToken())) {
+            return new Response("hello ".$request->getName()."!");
+        }
+        return new Response('');
     }
-	
+
     /**
-     * @param string $username
-     * @param string $password
-     *
+     * @param $username
+     * @param $password
      * @return SSOToken
      */
-    public function handleRegister($username, $password)
+    public function handleRegister($username, $password): SSOToken
     {
-        return;
+        return $this->registry->registerNewSession($username, $password);
     }
-	
-    /**
-     * @param SSOToken
-     */
-    public function handleUnRegister(SSOToken $token)
+
+    public function handleLogout(SSOToken $token)
     {
-        return;
+        $this->registry->unRegister($token);
     }
 }

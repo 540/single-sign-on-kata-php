@@ -4,14 +4,19 @@ namespace SSO;
 
 class Request
 {
-    private string $name;
-
-    private SSOToken $token;
+    /**
+     * @var string
+     */
+    private $name;
 
     /**
-     * Request constructor.
-     * @param $name
-     * @param SSOToken|null $token
+     * @var SSOToken
+     */
+    private $token;
+
+    /**
+     * @param string   $name
+     * @param SSOToken $token
      */
     public function __construct($name, ?SSOToken $token)
     {
@@ -30,7 +35,7 @@ class Request
     /**
      * @return SSOToken
      */
-    public function getToken()
+    public function getSSOToken()
     {
         return $this->token;
     }
