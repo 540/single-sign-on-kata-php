@@ -4,10 +4,7 @@ namespace SSO;
 
 class Response
 {
-    /**
-     * @var string
-     */
-    private $text;
+    private string $text;
 
     /**
      * @param string $text

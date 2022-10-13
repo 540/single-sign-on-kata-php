@@ -35,7 +35,7 @@ class Request
     /**
      * @return SSOToken
      */
-    public function getToken()
+    public function getSSOToken()
     {
         return $this->token;
     }
